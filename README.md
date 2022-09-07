@@ -76,3 +76,4 @@ The entire pipeline is being modulated in Snakemake to increase reproducibility.
 5. ind_id_explore_2.py -> Python script for initial exploration of indSNPs - part 2
 6. twin_sex_genotypes.py -> Python script that explores possible patterns of sexSNP genotypes with respect to the sex of the twin of the focal sample.
 7. hethom_homhom_distances.py -> Python script to explore distances between hom hom sites and het het sites in indSNPs.
+
