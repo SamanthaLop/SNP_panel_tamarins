@@ -33,6 +33,7 @@ The entire pipeline is being modulated in Snakemake to increase reproducibility.
 14. AB_Filter.py -> Calls the AB_Function.
 15. AB_Python_send.sh -> Calls and runs AB filter script.
 16. SelectVariants.sh -> Keeps only variants with a max number of no-calls of 0.
+17. heterozygosity.py -> Exploring and plotting heterozygosity per genome sample and species.
 
 ## Stage 3 scripts
 1. fixeddifferences.py -> WRITTEN BY AXEL JENSEN. Finds variable sites that are fixed for each species. Requires the input VCF, the output TSV, and the samples.txt file with is a tsv list of each sample and which population (species) it belongs to.
@@ -56,6 +57,7 @@ The entire pipeline is being modulated in Snakemake to increase reproducibility.
 20. consecutive_positions_in_vcf.py -> Looks for consecutive regions above a certain input threshold within the input VCF file. The script will look in the consecutive region for the SNP from an input SNP list and output the SNP, the start, stop, and length of the consecutive region.
 21. add_brackets_to_fasta.py -> Adds a [] around the SNP in fasta files.
 22. VCFtoMSA2_plusconsensus.py -> Modified from a script written by AXEL JENSEN. Creates a Multiple Sequence Alignment from a VCF and a consensus sequence fasta file using IUPAC codes. 
+23. KING_plots.py -> Python scripts to plot king output.
 
 ## Stage 4 scripts
 1. ANGSD_consensus_seq.sh -> Uses ANGSD to obtain consensus fasta from input bam file. As it stands now, it uses IUPAC codes for variable sites.
@@ -65,3 +67,12 @@ The entire pipeline is being modulated in Snakemake to increase reproducibility.
 5. filter_dimers.py -> Filters the dimer list tsv MFE primer output.
 6. initial_in_silico_pcr.py -> Script -for my reference, not exactly intended for others- interpreting amplicon results of MFE primer.
 7. GT_pipeline.sh -> Sends all the necessary GTseq scripts to be run. GTseq scripts are in the GTseq_scripts directory and also available at: https://github.com/GTseq
+
+## Stage 5 scripts
+1. initial_exploration_gt_output.py -> Python scripts used for initial exploration of GT seq output - what variants/samples produced zero reads, how well the rest of them performed etc. Purely exploratory script.
+2. detect_sex_from_gt_output.py -> Python script to find genotypes (male or female) for selected sexSNPs in the genotyped samples.
+3. detect_spp_from_gt_output.py -> Python script to find genotypes (lwed or simp) for selected spSNPs in the genotypes samples.
+4. ind_id_explore_1.py -> Python script for initial exploration of indSNPs - part 1
+5. ind_id_explore_2.py -> Python script for initial exploration of indSNPs - part 2
+6. twin_sex_genotypes.py -> Python script that explores possible patterns of sexSNP genotypes with respect to the sex of the twin of the focal sample.
+7. hethom_homhom_distances.py -> Python script to explore distances between hom hom sites and het het sites in indSNPs.
