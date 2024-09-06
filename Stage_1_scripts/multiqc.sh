@@ -2,7 +2,7 @@
 
 #SBATCH -A PROJ
 #SBATCH -p node
-#SBATCH -n 20
+#SBATCH -n 1
 #SBATCH -t 05:00:00
 #SBATCH -J multiqc
 #SBATCH -e /PROJ_DIR/PATH/%x-%j.error
